@@ -143,13 +143,13 @@ EOF
         function render() {
             let regex;
             try {
-                regex = new RegExp(patternInput.value, 'g');
+                regex = new RegExp(patternInput.value, 'gm');
             } catch {
                 preview.textContent = textArea.value;
                 return;
             }
 
-            const raw = textArea.value;
+            const raw = textArea.value.replace(/\r\n/g, '\n');
             const safe = escapeHtml(raw);
 
             preview.innerHTML = safe.replace(regex, m => `<mark>${m}</mark>`);
@@ -157,6 +157,7 @@ EOF
 
         textArea.addEventListener('input', render);
         patternInput.addEventListener('input', render);
+        patternInput.addEventListener('change', render);
         render();
     </script>
 
