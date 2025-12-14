@@ -8,5 +8,5 @@
     <!-- Tailwind -->
     <script src="https://cdn.tailwindcss.com"></script>
 
-    <link rel="stylesheet" href="/css/app.css">
+    <!-- <link rel="stylesheet" href="/css/app.css"> -->
 </head>
